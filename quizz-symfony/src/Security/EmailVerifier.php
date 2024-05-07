@@ -23,8 +23,8 @@ class EmailVerifier
     {
         $signatureComponents = $this->verifyEmailHelper->generateSignature(
             $verifyEmailRouteName,
-            (string) $user->getId(),
-            $user->getId()
+            (string) $user->getEmail(),
+            $user->getEmail()
         );
 
         $context = $email->getContext();
@@ -42,7 +42,7 @@ class EmailVerifier
      */
     public function handleEmailConfirmation(Request $request, Users $user): void
     {
-        $this->verifyEmailHelper->validateEmailConfirmationFromRequest($request, (string) $user->getId(), $user->getId());
+        $this->verifyEmailHelper->validateEmailConfirmationFromRequest($request, (string) $user->getEmail(), $user->getEmail());
 
         $user->setVerified(true);
 
