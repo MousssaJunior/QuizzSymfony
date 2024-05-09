@@ -9,7 +9,7 @@ use App\Repository\CategorieRepository;
 
 class CategorieController extends AbstractController
 {
-    #[Route('/categorie', name: 'app_categorie')]
+    #[Route('/', name: 'app_categorie')]
     public function index(CategorieRepository $repositoryCategorie): Response
     {
         $categories = $repositoryCategorie->findAll();
