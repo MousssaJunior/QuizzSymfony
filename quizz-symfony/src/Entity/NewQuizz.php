@@ -28,6 +28,9 @@ class NewQuizz
     #[ORM\Column(nullable: true)]
     private ?int $id_user = null;
 
+    #[ORM\Column]
+    private ?int $Good_reponse = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -89,6 +92,18 @@ class NewQuizz
     public function setIdUser(?int $id_user): static
     {
         $this->id_user = $id_user;
+
+        return $this;
+    }
+
+    public function getGoodReponse(): ?int
+    {
+        return $this->Good_reponse;
+    }
+
+    public function setGoodReponse(int $Good_reponse): static
+    {
+        $this->Good_reponse = $Good_reponse;
 
         return $this;
     }
