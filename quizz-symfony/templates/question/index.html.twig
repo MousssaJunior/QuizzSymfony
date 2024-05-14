@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
-    <h1>Questions</h1>
+    <h1>Quizz time</h1>
     <ul>
-        {% for question in question %}
-            <li> id categorie : {{ question.IdCategorie }} / Question:  {{ question.question }}</li>
+        {% for categorie in categories %}
+            <li><a href="{{ path('app_questions', {'id': categorie.id}) }}">{{ categorie.name }}</a></li>
+            
         {% endfor %}
     </ul>
 {% endblock %}

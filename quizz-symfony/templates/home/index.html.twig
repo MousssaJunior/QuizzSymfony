@@ -1,15 +1,10 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
-	<h1>Quizz time</h1>
-
-	<select name="pets" id="pet-select">
-		{% for categorie in categories %}
-			<option value="">{{ categorie.name }}</option>
-			{% endfor %}			 
-	</select>
-<button>envoyer</button>
-	
-	{% endblock %}
-  
+    <h1>Quizz time</h1>
+    <ul>
+        {% for categorie in categories %}
+            <li><a href="{{ path('app_quizz', {'id': categorie.id}) }}">{{ categorie.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
