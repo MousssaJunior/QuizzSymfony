@@ -24,16 +24,19 @@ class CategorieController extends AbstractController
     
     #[Route('/categorie/{id}', name: 'app_quizz')]
     public function showQuizz($id, CategorieRepository $repositoryCategorie, QuestionRepository $repositoryQuestion, ReponseRepository $repositoryReponse): Response
-    {
+    {  
         $categorie = $repositoryCategorie->find($id);
         $questions = $repositoryQuestion->findBy(['id_categorie' => $categorie]);
-        $reponses =  $repositoryReponse->findby(['id_question' => $questions]);
-        // print_r($reponses);
+        $reponses =  $repositoryReponse->findBy(['id_question' => $questions]);
+        
         return $this->render('categorie/index.html.twig', [ 
+          
             'categorie' => $categorie,
             'questions' => $questions,
-            'reponses' => $reponses
+            'reponses' => $reponses,
+            // dd($reponses),
         ]);
+             
     }
     
 }

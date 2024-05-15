@@ -2,18 +2,23 @@
 
 {% block body %}
 	<h1>Quizz time</h1>
+	<form>
 	<ul>
-		{% for questions in questions %}
-			<li>{{ questions.question }}
-				<br>
-                  {% for reponse in reponses %}
-                    {%if questions.id == reponse.IdQuestion %}
-                        <input type="checkbox" id="horns" name="horns" />
-                        <label for="horns">{{reponse.reponse}}<br></label>
-                    {% endif %} 
-                {% endfor %}
-			</li>
-            
-	{% endfor %}
+		{% for question in questions %}
+			<div class="Quizz">
+				<li>{{ question.question }}
+					<br>
+					{% for reponse in reponses %}
+						{# {{dump(reponse)}} #}
+						{% if question.id == reponse.IdQuestion %}
+							<input type="radio" id="radio" name={{question.id}}/>
+							<label for="radio">{{reponse.getReponse}}<br></label>
+						{% endif %}
+					{% endfor %}
+				</li>
+			</div>
+		{% endfor %}
 	</ul>
+	<button type="submit">Valider</button>
+	<form>
 {% endblock %}
