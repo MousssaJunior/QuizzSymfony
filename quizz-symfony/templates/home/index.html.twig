@@ -1,11 +1,10 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
     <h1>Quizz time</h1>
     <ul>
         {% for categorie in categories %}
-            <li><a href="#">{{ categorie.name }}</a></li>
+            <li><a href="{{ path('app_quizz', {'id': categorie.id}) }}">{{ categorie.name }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}

@@ -34,9 +34,9 @@ class Reponse
     }
 
     public function setIdQuestion(int $id_question): static
-    {
+    {   
         $this->id_question = $id_question;
-
+        var_dump($id_question);
         return $this;
     }
 
