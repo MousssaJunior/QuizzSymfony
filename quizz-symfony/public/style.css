@@ -1,3 +1,20 @@
 *{
-    background-color: purple;
+    background-color: #FF4F59;
+}
+
+.d-grid{
+    display: grid;
+}
+.d-flex{
+    display: flex;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+
+.select-cate{
+    background-color: #FE4DCF;
+    padding: 2em;
+    color: black;
+    text-decoration: none;
 }
