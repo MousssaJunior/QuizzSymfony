@@ -28,6 +28,7 @@ class CategorieController extends AbstractController
         $categorie = $repositoryCategorie->find($id);
         $questions = $repositoryQuestion->findBy(['id_categorie' => $categorie]);
         $reponses =  $repositoryReponse->findBy(['id_question' => $questions]);
+
         
         return $this->render('categorie/index.html.twig', [ 
           
@@ -38,6 +39,10 @@ class CategorieController extends AbstractController
         ]);
              
     }
+    
+
+
+
     
 }
 
