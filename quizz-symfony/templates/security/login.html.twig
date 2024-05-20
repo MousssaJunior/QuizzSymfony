@@ -2,22 +2,23 @@
 
 {% block title %}Log in!{% endblock %}
 
-{% block body %}
+{% block body % }
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
     {% if app.user %}
-        <div class="mb-3">
+        <div class="mb-3 ">
             You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputY">Y</label>
-    <input type="text" value="{{ last_username }}" name="y" id="inputY" class="form-control" autocomplete="username" required autofocus>
-    <label for="inputPassword">Password</label>
+    <h1 class="h3 mb-3  font-weight-normal">Connectez-vous</h1>
+    <div class=" container mt-5 mx-auto  pl-2 justify-content-center ">   
+    <label for="inputY">Mail</label>
+    <input type="text" value="{{ last_username }}" name="y" id="inputY" class="form-control p-1" autocomplete="username" required autofocus>
+    <label for="inputPassword">Mot de Passe</label>
     <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
     <input type="hidden" name="_csrf_token"
@@ -26,12 +27,13 @@
 
     <div class="checkbox mb-3">
         <label>
-            <input type="checkbox" name="_remember_me"> Remember me
+            <input type="checkbox" name="_remember_me"> Rappelez vous de moi
         </label>
     </div>
 
     <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
+        Connection
     </button>
+    </div>
 </form>
 {% endblock %}
