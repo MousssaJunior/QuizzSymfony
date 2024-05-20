@@ -2,7 +2,7 @@
 
 {% block body %}
 	<h1>Quizz time</h1>
-	<form>
+<form>
 	<ul>
 		{% for question in questions %}
 			<div class="Quizz">
@@ -13,12 +13,15 @@
 						{% if question.id == reponse.IdQuestion %}
 							<input type="radio" id="radio" name={{question.id}}/>
 							<label for="radio">{{reponse.getReponse}}<br></label>
+							<br>
 						{% endif %}
 					{% endfor %}
+					<br>
+					
 				</li>
 			</div>
 		{% endfor %}
 	</ul>
-	<button type="submit">Valider</button>
+	<button type="submit" onclick='checkQuizz()'>Valider</button>
 	<form>
 {% endblock %}
