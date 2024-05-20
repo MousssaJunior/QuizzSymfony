@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1>Quizz time</h1>
+	<form>
+	<ul>
+		{% for question in questions %}
+			<div class="Quizz">
+				<li>{{ question.question }}
+					<br>
+					{% for reponse in reponses %}
+						{# {{dump(reponse)}} #}
+						{% if question.id == reponse.IdQuestion %}
+							<input type="radio" id="radio" name={{question.id}}/>
+							<label for="radio">{{reponse.getReponse}}<br></label>
+						{% endif %}
+					{% endfor %}
+				</li>
+			</div>
+		{% endfor %}
+	</ul>
+	<button type="submit">Valider</button>
+	<form>
+{% endblock %}
