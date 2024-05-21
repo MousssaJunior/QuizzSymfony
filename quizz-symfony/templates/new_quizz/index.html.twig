@@ -8,13 +8,27 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput-{{questseq.id}}">{{questseq.Intitule}}</label>
+      <div class="col-md-4">
+        <input id="textinput-{{questseq.id}}" name="textinput-{{questseq.id}}" type="text" placeholder="{{questseq.Intitule}}" class="form-control input-md">
+      </div>
+    </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/home/moussa/W-PHP-502-PAR-2-1-Quiz-moussa-junior.fofana/quizz-symfony/src/Controller/NewQuizzController.php</code></li>
-        <li>Your template at <code>/home/moussa/W-PHP-502-PAR-2-1-Quiz-moussa-junior.fofana/quizz-symfony/templates/new_quizz/index.html.twig</code></li>
-    </ul>
-</div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="checkboxes-{{questseq.id}}">Réponses :</label>
+      <div class="col-md-4">
+        {% for repseq in questseq.ReponsesQuestion %}
+          <div class="checkbox">
+            <label for="checkboxes-{{questseq.id}}-{{repseq.id}}">
+              <input type="checkbox" name="checkboxes-{{questseq.id}}" id="checkboxes-{{questseq.id}}-{{repseq.id}}" value="{{repseq.id}}">
+              {{ repseq.Intitule }}
+            </label>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+{% endfor %}
+
 {% endblock %}
