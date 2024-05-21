@@ -4,4 +4,10 @@ controllers:
         namespace: App\Controller
     type: attribute
 
+admin_panel:
+    path: /admin
+    controller: App\Controller\AdminController::index
 
+manage_users:
+    path: /admin/users
+    controller: App\Controller\AdminController::manageUsers
