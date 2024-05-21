@@ -2,38 +2,50 @@
 
 {% block title %}Log in!{% endblock %}
 
-{% block body % }
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="h3 mb-3 font-weight-normal text-center">Connectez-vous</h1>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
 
-    {% if app.user %}
-        <div class="mb-3 ">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                        {% if app.user %}
+                            <div class="alert alert-info">
+                                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                            </div>
+                        {% endif %}
+
+                        <div class="form-group">
+                            <label for="inputY">Mail</label>
+                            <input type="text" value="{{ last_username }}" name="y" id="inputY" class="form-control" autocomplete="username" required autofocus>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputPassword">Mot de Passe</label>
+                            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                        </div>
+
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" name="_remember_me" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Rappelez vous de moi</label>
+                        </div>
+
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">
+                            Connexion
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-    {% endif %}
-
-    <h1 class="h3 mb-3  font-weight-normal">Connectez-vous</h1>
-    <div class=" container mt-5 mx-auto  pl-2 justify-content-center ">   
-    <label for="inputY">Mail</label>
-    <input type="text" value="{{ last_username }}" name="y" id="inputY" class="form-control p-1" autocomplete="username" required autofocus>
-    <label for="inputPassword">Mot de Passe</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
-
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" name="_remember_me"> Rappelez vous de moi
-        </label>
     </div>
-
-    <button class="btn btn-lg btn-primary" type="submit">
-        Connection
-    </button>
-    </div>
-</form>
+</div>
 {% endblock %}
