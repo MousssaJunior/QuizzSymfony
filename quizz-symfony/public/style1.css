@@ -1,5 +1,5 @@
-*{
-    background-color: #FF4F59;
+* {
+    background-color: white;
 }
 
 .d-grid{
@@ -11,10 +11,18 @@
 .wrap{
     flex-wrap: wrap;
 }
+/* .side{
+    margin-left: 5em;
+    margin-right: 5em;
+} */
+.center{
+    justify-content: center;
+}
 
 .select-cate{
     background-color: #FE4DCF;
     padding: 2em;
     color: black;
     text-decoration: none;
+    width: 25em;
 }
