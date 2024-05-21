@@ -16,7 +16,7 @@ class CategorieController extends AbstractController
     {
         $categories = $repositoryCategorie->findAll();
     
-        return $this->render('home/index.html.twig', [
+        return $this->render('categorie/index.html.twig', [
             'categories' => $categories,
         ]);
 
@@ -30,7 +30,7 @@ class CategorieController extends AbstractController
         $reponses =  $repositoryReponse->findBy(['id_question' => $questions]);
 
         
-        return $this->render('categorie/index.html.twig', [ 
+        return $this->render('quizz/index.html.twig', [ 
           
             'categorie' => $categorie,
             'questions' => $questions,
