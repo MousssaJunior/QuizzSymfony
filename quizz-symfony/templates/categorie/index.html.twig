@@ -1,27 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	<h1>Quizz time</h1>
-<form>
-	<ul>
-		{% for question in questions %}
-			<div class="Quizz">
-				<li>{{ question.question }}
-					<br>
-					{% for reponse in reponses %}
-						{# {{dump(reponse)}} #}
-						{% if question.id == reponse.IdQuestion %}
-							<input type="radio" id="radio" name={{question.id}}/>
-							<label for="radio">{{reponse.getReponse}}<br></label>
-							<br>
-						{% endif %}
-					{% endfor %}
-					<br>
-					
-				</li>
-			</div>
-		{% endfor %}
-	</ul>
-	<button type="submit" onclick=''>Valider</button>
-	<form>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Catégorie Time</h1>
+    <ul class="grid gap-3 d-grid list-unstyled">
+        {% for categorie in categories %}
+            <li class="select-cate">
+                <a class="select-cate btn btn-primary btn-lg btn-block" href="{{ path('app_quizz', {'id': categorie.id}) }}">{{ categorie.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    
+    <div class="mt-4">
+        {# <a href="{{ path('admin_panel') }}" class="btn btn-outline-primary me-3">Admin</a> #}
+        <a href="{{ path('app_logout') }}" class="btn btn-outline-danger">Logout</a>
+    </div>
+</div>
 {% endblock %}
+
