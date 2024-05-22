@@ -3,7 +3,7 @@
 {% block body %}
 <div class="container mt-5">
     <h1 class="text-center mb-4">Quizz Time</h1>
-    <form method="post">
+    <form method="post" action="/reponse_back">
         <ul class="list-group">
             {% for question in questions %}
                 <div class="card mb-3">
@@ -13,7 +13,7 @@
                             {% for reponse in reponses %}
                                 {% if question.id == reponse.IdQuestion %}
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" id="radio{{ loop.index }}" name="question{{ question.id }}" value="{{ reponse.id }}">
+                                        <input class="form-check-input" type="radio" id="radio{{ loop.index }}" name="question[{{ question.id }}]" value="{{ reponse.id }}">
                                         <label class="form-check-label" for="radio{{ loop.index }}">
                                             {{ reponse.getReponse }}
                                         </label>

@@ -1,9 +1,0 @@
-
-{% block body %}
-    <h1>Quizz time</h1>
-    <ul  class="grid gap-3 d-grid list-unstyled">
-        {% for categorie in categories %}
-            <li class="select-cate text-center"><a class="select-cate" href="{{ path('app_quizz', {'id': categorie.id}) }}">{{ categorie.name }}</a></li>
-        {% endfor %}
-    </ul>
-{% endblock %}
