@@ -17,7 +17,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
-
+    
     #[ORM\Column(length: 180)]
     private ?string $y = null;
 
@@ -36,6 +36,10 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private bool $isVerified = false;
 
+    public function getid(): ?int
+    {
+        return $this->id;
+    }
     public function getEmail(): ?string
     {
         return $this->y;
@@ -122,4 +126,5 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+    
 }
