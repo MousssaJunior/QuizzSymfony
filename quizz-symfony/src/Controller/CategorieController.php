@@ -29,20 +29,10 @@ class CategorieController extends AbstractController
         $categorie = $repositoryCategorie->find($id);
         $questions = $repositoryQuestion->findBy(['id_categorie' => $categorie]);
         $reponses =  $repositoryReponse->findBy(['id_question' => $questions]);
-
-        // $monChamp = $request->request->get('input');
-        // $nomDuChamp = $monChamp->getName('radio');
-
-        // var_dump($monChamp);
-        // echo $nomduChamp;
-
-        
         return $this->render('quizz/index.html.twig', [ 
-          
             'categorie' => $categorie,
             'questions' => $questions,
             'reponses' => $reponses,
-            // dd($reponses),
         ]);
              
     }

@@ -10,9 +10,9 @@ use Symfony\Component\Routing\Attribute\Route;
 class ResultatController extends AbstractController
 {
     #[Route('/resultat/{resultat}/{AllQuestion}', name: 'app_resultat')]
-    public function index(Request $request, $resultat , $AllQuestion, $id_categorie): Response
+    public function index(Request $request, $resultat , $AllQuestion): Response
     {
         // dd($resultat, $AllQuestion);
-        return $this->render('resultat/index.html.twig', ['resultat' => $resultat, 'AllQuestion' => $AllQuestion]);
+        return $this->render('resultat/index.html.twig', ['resultat' => $resultat, 'total' => $AllQuestion]);
     }
 }

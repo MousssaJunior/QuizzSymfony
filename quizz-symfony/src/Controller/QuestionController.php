@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\QuestionRepository;
+
 class QuestionController extends AbstractController
 {
     #[Route('/question', name: 'app_question')]

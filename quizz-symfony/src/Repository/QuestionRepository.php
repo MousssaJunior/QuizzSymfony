@@ -19,17 +19,12 @@ class QuestionRepository extends ServiceEntityRepository
     //    /**
     //     * @return Question[] Returns an array of Question objects
     //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('q')
-    //            ->andWhere('q.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('q.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+       public function countQuestions($id_categorie): array
+       {  $connect = $this->getEntityManager()->getConnection();
+         $sql = "SELECT COUNT(id) FROM question WHERE id_categorie = :id_categorie";
+         $resultat = $connect->executeQuery($sql, ['id_categorie' => $id_categorie]);
+         return $resultat->fetchAllAssociative();
+       }
 
     //    public function findOneBySomeField($value): ?Question
     //    {
