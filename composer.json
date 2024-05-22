@@ -1,0 +1,6 @@
+{
+    "require": {
+        "symfony/form": "^6.4",
+        "symfonycasts/reset-password-bundle": "^1.21"
+    }
+}
