@@ -11,3 +11,6 @@ admin_panel:
 manage_users:
     path: /admin/users
     controller: App\Controller\AdminController::manageUsers
+my_profile:
+    path: /my-profile
+    controller: App\Controller\ProfileController::myProfile

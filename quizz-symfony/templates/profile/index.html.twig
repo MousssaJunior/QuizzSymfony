@@ -1,0 +1,22 @@
+{# templates/profile/my_profile.html.twig #}
+{# templates/profile/my_profile.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">My Profile</h1>
+    <div class="card">
+        <div class="card-body">
+            {# <h5 class="card-title">Username: {{ userProfile.username }}</h5>
+            <p class="card-text">Email: {{ userProfile.email }}</p> #}
+            <!-- Ajoutez d'autres détails du profil ici -->
+            <a href="{{ path('app_forgot_password_request') }}" class="btn btn-primary">Reset Password</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
