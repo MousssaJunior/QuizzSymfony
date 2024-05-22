@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class CategorieController extends AbstractController
 {
-    #[Route('/categorie/index.html.twig', name: 'app_categorie')]
+    #[Route('/categorie', name: 'app_categorie')]
     public function showCategorie(CategorieRepository $repositoryCategorie , QuestionRepository $repositoryQuestion,): Response
     {
         $categories = $repositoryCategorie->findAll();
