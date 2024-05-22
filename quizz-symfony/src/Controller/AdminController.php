@@ -18,9 +18,10 @@ class AdminController extends AbstractController
     /**
  * @Route("/admin/users", name="app_manage_users")
  */
+#[Route('/admin/users', name: 'app_manage_users')]
 public function manageUsers(): Response
 {
-    // Logique pour gérer les utilisateurs
+  
     return $this->render('admin/manage_users.html.twig');
 }
 
