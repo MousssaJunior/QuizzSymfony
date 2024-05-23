@@ -19,8 +19,10 @@ class ReponseController extends AbstractController
     public function GetResponses(Request $request,  CategorieRepository $repositoryCategorie, QuestionRepository $repositoryQuestion, ReponseRepository $repositoryReponse, $id_categorie): RedirectResponse
     {   $reponse =  $request->get("question");
         $value = array_values($reponse);
+        
         $expected = $repositoryReponse->findby(['id' => $value] );
         $resultat = 0;
+
         $AllQuestions = $repositoryQuestion->countQuestions($id_categorie);
         foreach($expected as $val){
             if($val->getReponseExpected() == 1){
