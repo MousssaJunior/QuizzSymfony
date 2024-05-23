@@ -3,10 +3,14 @@
 {% block title %}Admin Panel{% endblock %}
 
 {% block body %}
+ <a href="{{ path('app_categorie') }}" class="btn btn-primary btn-lg">Retour</a>
+
 <div class="container mt-5">
     <h1 class="text-center mb-4">Admin Panel</h1>
-    <div class="list-group">
+    <div class="list-group mt-5">
         <a href="{{ path('app_adminusers_index') }}" class="list-group-item list-group-item-action">Manage Users</a>
+         <a href="{{ path('app_admincategory_index') }}" class="list-group-item list-group-item-action  mt-2">Manage Catégorie</a>
+         <a href="{{ path('app_adminquestion_index') }}" class="list-group-item list-group-item-action  mt-2">Manage Question</a>
        
         {# <a href="{{ path('app_manage_quizzes') }}" class="list-group-item list-group-item-action">Manage Quizzes</a> #}
         {# <a href="{{ path('app_dashboard') }}" class="list-group-item list-group-item-action">Dashboard</a> #}
