@@ -2,6 +2,9 @@
     background-color: white;
 }
 
+label{
+    width: 200em;
+}
 /* .d-grid{
     display: grid;
 }
