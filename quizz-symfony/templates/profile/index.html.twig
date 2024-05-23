@@ -1,7 +1,8 @@
 {# templates/profile/my_profile.html.twig #}
 {# templates/profile/my_profile.html.twig #}
 
-{% extends 'base.html.twig' %}{% block title %}
+{% extends 'base.html.twig' %}
+	{% block title %}
 My Profile
 {% endblock %}
 
@@ -10,15 +11,22 @@ My Profile
 		<div class="card">
 			<div class="card-body">
 				{# <h5 class="card-title">Username: {{ userProfile.username }}</h5>
-				            <p class="card-text">Email: {{ userProfile.email }}</p> #}
-				<!-- Ajoutez d'autres détails du profil ici --><a href="{{ path('app_forgot_password_request') }}" class="btn btn-primary"> Reset Password</a>
+								            <p class="card-text">Email: {{ userProfile.email }}</p> #}
+				<!-- Ajoutez d'autres détails du profil ici -->
+					<a href="{{ path('app_forgot_password_request') }}" class="btn btn-primary"> Reset Password</a>
 			</div>
 			<div class="card">
 				<div class="card-body">
 					<a href="{{ path('app_create') }}" class="btn btn-primary">Create Quizz</a>
 				</div>
 			</div>
-         
+			<div class="card">
+				<div class="card-body">
+
+					<a href="{{ path('app_profile_edit') }}" class="btn btn-primary">Reset Mail </a>
+				</div>
+			</div>
+
 
 		</div>
 	</div>
