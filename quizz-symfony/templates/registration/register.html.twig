@@ -18,7 +18,7 @@
                     {{ form_start(registrationForm) }}
 
                     <div class="form-group">
-                        {{ form_label(registrationForm.y) }}
+                       <p> Mail </p>
                         {{ form_widget(registrationForm.y, {'attr': {'class': 'form-control'}}) }}
                         {{ form_errors(registrationForm.y) }}
                     </div>
@@ -43,5 +43,7 @@
         </div>
     </div>
 </div>
+  <a href="{{ path('app_login') }}" class="btn btn-warning btn-lg">Login</a>
+  <a href="{{ path('admin_panel') }}" class=" btn-lg btn btn-outline-primary me-3">Admin</a>
 {% endblock %}
 
