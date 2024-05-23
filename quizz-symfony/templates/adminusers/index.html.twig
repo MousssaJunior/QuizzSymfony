@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Users index{% endblock %}
+{% block title %}Users Pannel{% endblock %}
 
 {% block body %}
  <a href="{{ path('app_admin') }}" class="btn btn-primary btn-lg">Retour</a>
 
-    <h1>Users index</h1>
+    <h1>Users Pannel</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Y</th>
+                <th>Mail</th>
                 {# <th>Roles</th>
                 <th>Password</th> #}
                 <th>IsVerified</th>
@@ -27,8 +27,11 @@
                 <td>{{ user.password }}</td> #}
                 <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
                 <td>
-                    <a href="{{ path('app_adminusers_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('app_adminusers_edit', {'id': user.id}) }}">edit</a>
+                
+                 <a href="{{ path('app_adminusers_show', {'id': user.id}) }}" class="btn btn-info btn-xs">show</a>
+                  <a href="{{ path('app_adminusers_edit', {'id': user.id}) }}" class="btn btn-warning btn-xs">edit</a>
+                    {# <a href="{{ path('app_adminusers_show', {'id': user.id}) }}">show</a>
+                    <a href="{{ path('app_adminusers_edit', {'id': user.id}) }}">edit</a> #}
                 </td>
             </tr>
         {% else %}
@@ -38,6 +41,7 @@
         {% endfor %}
         </tbody>
     </table>
+ <a href="{{ path('app_adminusers_new') }}" class="btn btn-success btn-lg">Create new</a>
 
-    <a href="{{ path('app_adminusers_new') }}">Create new</a>
+   
 {% endblock %}
