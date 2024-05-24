@@ -16,7 +16,6 @@ class CategorieController extends AbstractController
     public function showCategorie(CategorieRepository $repositoryCategorie , QuestionRepository $repositoryQuestion,): Response
     {
         $categories = $repositoryCategorie->findAll();
-    
         return $this->render('categorie/index.html.twig', [
             'categories' => $categories,
         ]);
