@@ -2,21 +2,39 @@
 
 {% extends 'base.html.twig' %}
 
-{% block title %}Historique de {{ user.email }}{% endblock %}
+{% block title %}Historique{% endblock %}
 
 {% block body %}
-    <h1>Historique de {{ user.email }}</h1>
-    <h2>Historique des actions</h2>
-    <ul>
-        {% for item in history %}
-            <li>
-                Catégorie: {{ item.nameCategorie }}<br>
-                ID Question: {{ item.idQuestion }}<br>
-                ID Réponse: {{ item.idReponse }}
-            </li>
+    <div class="container">
+        <h1 class="mt-4">Historique</h1>
+        <p class="lead">Bonjour {{ user.y }}!</p>
+        
+        {% if history is empty %}
+            <p class="alert alert-info">Aucun historique trouvé.</p>
         {% else %}
-            <li>Aucune action trouvée.</li>
-        {% endfor %}
-    </ul>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Question</th>
+                            <th>Réponse</th>
+                            <th>Catégorie</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for entry in history %}
+                            <tr>
+                                <td>{{ entry.question }}</td>
+                                <td>{{ entry.reponse }}</td>
+                                 <td>{{ entry.categorie }}</td>
+                                {# <td>{{ entry.date }}</td> #}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}
 
