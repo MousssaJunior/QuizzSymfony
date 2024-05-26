@@ -58,6 +58,8 @@ class HistoriqueController extends AbstractController
                     'categorie' => $categorie->getname(), 
                     'question' => $question->getQuestion(),
                     'reponse' => $reponse->getReponse(),
+                    'reponse_expected' => $reponse->getReponseExpected(), // Assurez-vous que cette méthode existe dans l'entité Reponse
+
                   
                 ];
             }
