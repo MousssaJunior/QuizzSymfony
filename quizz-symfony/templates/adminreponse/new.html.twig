@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Reponse{% endblock %}
+{% block title %}Nouvelle Réponse{% endblock %}
 
 {% block body %}
-    <h1>Create new Reponse</h1>
-
-    {{ include('adminreponse/_form.html.twig') }}
-
-    <a href="{{ path('app_adminreponse_index') }}">back to list</a>
+<div class="container mt-5">
+    <h1 class="mb-4">Créer une nouvelle Réponse</h1>
+    <div class="card">
+        <div class="card-body">
+            {{ include('adminreponse/_form.html.twig') }}
+        </div>
+    </div>
+    <a href="{{ path('app_adminreponse_index') }}" class="btn btn-secondary mt-3">Retour à la liste</a>
+</div>
 {% endblock %}

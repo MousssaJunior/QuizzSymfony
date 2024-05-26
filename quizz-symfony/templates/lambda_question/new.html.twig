@@ -1,11 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Question{% endblock %}
+{% block title %}Nouvelle Question{% endblock %}
 
 {% block body %}
-    <h1>Create new Question</h1>
-
-    {{ include('lambda_categorie/_form.html.twig') }}
-
- 
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header">
+            <h1 class="card-title mb-0">Créer une nouvelle Question</h1>
+        </div>
+        <div class="card-body">
+            <h2>Informations de la question</h2>
+            {{ include('lambda_categorie/_form.html.twig') }}
+        </div>
+        <div class="card-footer text-right">
+            <a href="{{ path('app_create') }}" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Retour à la liste
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}

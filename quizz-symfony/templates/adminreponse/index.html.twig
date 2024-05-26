@@ -4,7 +4,10 @@
 
 {% block body %}
     <h1>Reponse index</h1>
-
+    
+      <a href="{{ path('app_admin') }}" class="btn btn-secondary mt-5">
+                <i class="fas fa-arrow-left"></i> Retour 
+            </a>
     <table class="table">
         <thead>
             <tr>
@@ -23,8 +26,8 @@
                 <td>{{ reponse.reponse }}</td>
                 <td>{{ reponse.reponseExpected }}</td>
                 <td>
-                    <a href="{{ path('app_adminreponse_show', {'id': reponse.id}) }}">show</a>
-                    <a href="{{ path('app_adminreponse_edit', {'id': reponse.id}) }}">edit</a>
+                    <a href="{{ path('app_adminreponse_show', {'id': reponse.id}) }}"class="btn btn-info btn-xs">show</a>
+                    <a href="{{ path('app_adminreponse_edit', {'id': reponse.id}) }}"class="btn btn-warning btn-xs">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +38,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_adminreponse_new') }}">Create new</a>
+    <a href="{{ path('app_adminreponse_new') }}" class="btn btn-success btn-xs">Create new</a>
 {% endblock %}

@@ -1,34 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Reponse{% endblock %}
+{% block title %}Détails de la Réponse{% endblock %}
 
 {% block body %}
-    <h1>Reponse</h1>
-
+<div class="container mt-5">
+    <h1 class="mb-4">Détails de la Réponse</h1>
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th scope="row">Id</th>
                 <td>{{ reponse.id }}</td>
             </tr>
             <tr>
-                <th>Id_question</th>
+                <th scope="row">Id de la Question</th>
                 <td>{{ reponse.idQuestion }}</td>
             </tr>
             <tr>
-                <th>Reponse</th>
+                <th scope="row">Réponse</th>
                 <td>{{ reponse.reponse }}</td>
             </tr>
             <tr>
-                <th>Reponse_expected</th>
+                <th scope="row">Réponse Attendue</th>
                 <td>{{ reponse.reponseExpected }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_adminreponse_index') }}">back to list</a>
+    <a href="{{ path('app_adminreponse_index') }}" class="btn btn-secondary">Retour à la liste</a>
 
-    <a href="{{ path('app_adminreponse_edit', {'id': reponse.id}) }}">edit</a>
+    <a href="{{ path('app_adminreponse_edit', {'id': reponse.id}) }}" class="btn btn-warning">Modifier</a>
 
     {{ include('adminreponse/_delete_form.html.twig') }}
+</div>
 {% endblock %}
