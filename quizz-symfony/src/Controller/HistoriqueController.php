@@ -16,8 +16,14 @@ use App\Entity\Historique;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\User\UserInterface;
+use App\Repository\CategorieRepository;
+use App\Repository\QuestionRepository;
+use App\Repository\ReponseRepository;
+use Symfony\Component\HttpFoundation\Request;
+
+
 
 class HistoriqueController extends AbstractController
 {
