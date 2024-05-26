@@ -1,19 +1,28 @@
-{# templates/profile/edit.html.twig #}
 {% extends 'base.html.twig' %}
 
 {% block title %}Modifier le Mail{% endblock %}
 
 {% block body %}
-    <h1>Modifier le Mail</h1>
-
-    {{ form_start(form) }}
-        {{ form_row(form.y) }}
-        <button class="btn btn-primary">Enregistrer les modifications</button>
-    {{ form_end(form) }}
-
-    {% for message in app.flashes('success') %}
-        <div class="alert alert-success">
-            {{ message }}
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header ">
+            <h1 class="card-title mb-0">Modifier le Mail</h1>
         </div>
-    {% endfor %}
+        <div class="card-body">
+            {{ form_start(form) }}
+                <div class="form-group">
+                    {{ form_row(form.y, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+	  <a href="{{ path('app_profile') }}" class="btn btn-secondary mt-5">
+                <i class="fas fa-arrow-left"></i> Retour 
+            </a>
+</div>
+
+{% for message in app.flashes('success') %}
+    <div class="alert alert-success mt-3">{{ message }}</div>
+{% endfor %}
 {% endblock %}
