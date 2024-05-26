@@ -22,6 +22,8 @@
                             <th>Question</th>
                             <th>Réponse</th>
                             <th>Catégorie</th>
+                                                <th>Réponse Attendue</th>
+
                            
                         </tr>
                     </thead>
@@ -31,6 +33,8 @@
                                 <td>{{ entry.question }}</td>
                                 <td>{{ entry.reponse }}</td>
                                  <td>{{ entry.categorie }}</td>
+                                                         <td>{{ entry.reponse_expected }}</td>
+
                                 {# <td>{{ entry.date }}</td> #}
                             </tr>
                         {% endfor %}
