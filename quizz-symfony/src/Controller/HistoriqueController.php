@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Entity\Historique;
 use App\Entity\Question;
 use App\Entity\Reponse;
-use App\Entity\Categorie; // Importer l'entité Catégorie
+use App\Entity\Categorie;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
