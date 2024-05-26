@@ -1,11 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CreateController!
-{% endblock %}
+{% block title %}Gestion des Éléments{% endblock %}
 
 {% block body %}
-	<a href="{{ path('app_lambda_categorie_new') }}" class="list-group-item list-group-item-action  mt-2">Manage Catégorie</a>
-	<a href="{{ path('app_lambda_question_new') }}" class="list-group-item list-group-item-action  mt-2">Manage Question</a>
-	<a href="{{ path('app_lambdareponse_new') }}" class="list-group-item list-group-item-action  mt-2">Manage Reponse</a>
-
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Gestion des Éléments</h2>
+        </div>
+        <div class="list-group list-group-flush">
+            <a href="{{ path('app_lambda_categorie_new') }}" class="list-group-item list-group-item-action">
+                <i class="fas fa-tags"></i> Gérer les Catégories
+            </a>
+            <a href="{{ path('app_lambda_question_new') }}" class="list-group-item list-group-item-action">
+                <i class="fas fa-question-circle"></i> Gérer les Questions
+            </a>
+            <a href="{{ path('app_lambdareponse_new') }}" class="list-group-item list-group-item-action">
+                <i class="fas fa-reply"></i> Gérer les Réponses
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}
+
