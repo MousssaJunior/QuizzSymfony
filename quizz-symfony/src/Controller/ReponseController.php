@@ -44,7 +44,7 @@ class ReponseController extends AbstractController
             if ($expected && $expected->getReponseExpected() == 1) {
                 $resultat++;
             }
-            
+
    
             $histo = new Historique();
             $histo->setIdUser($info_user);
