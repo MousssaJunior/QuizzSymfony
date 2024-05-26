@@ -8,6 +8,9 @@
     <div class="container">
         <h1 class="mt-4">Historique</h1>
         <p class="lead">Bonjour {{ user.y }}!</p>
+                 <a href="{{ path('app_categorie') }}" class="btn btn-secondary mb-5">
+                <i class="fas fa-arrow-left"></i> Retour 
+            </a>
         
         {% if history is empty %}
             <p class="alert alert-info">Aucun historique trouvé.</p>
